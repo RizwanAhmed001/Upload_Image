@@ -10,7 +10,7 @@ connectDB();
 
 app.use(express.json());
 
-app.use("/api", imageRoute)
+app.use("/api/image", imageRoute)
 
 app.get("/", (req, res) => {
   res.send("API WORKING!")
