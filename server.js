@@ -1,18 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/connectDB.js";
-import fileUpload from "express-fileupload";
-
+import imageRoute from "./routes/image.route.js";
 dotenv.config();
-connectDB();
+
 
 const app = express();
-
-app.use(fileUpload({
-  useTempFiles: true
-}));
+connectDB();
 
 app.use(express.json());
+
+app.use("/api", imageRoute)
 
 app.get("/", (req, res) => {
   res.send("API WORKING!")
