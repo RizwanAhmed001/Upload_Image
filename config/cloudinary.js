@@ -1,6 +1,7 @@
 import cloudinary from "cloudinary";
+import dotenv from "dotenv";
+dotenv.config();
 
-console.log(process.env.api_key)
 const cloudinaryConfig = {
   cloud_name: process.env.cloud_Name,
   api_key: process.env.api_key,
